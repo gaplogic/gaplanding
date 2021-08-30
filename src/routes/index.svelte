@@ -1,15 +1,3 @@
-<script context="module">
-  export async function preload(page, session) {
-    const req = await this.fetch("./index.db");
-
-    if (!req.ok) throw await req.text();
-    const res = await req.json();
-
-    const { posts } = res;
-    return { posts };
-  }
-</script>
-
 <script>
   import { fade } from "svelte/transition";
   import { l } from "./_helpers/stores";
